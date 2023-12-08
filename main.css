@@ -3,14 +3,17 @@
     margin: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-.card{
+
+.card {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-body{
+
+body {
     background-color: rgb(222, 222, 252);
 }
+
 .headerName {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 45px;
@@ -18,7 +21,7 @@ body{
     color: rgb(1, 1, 85);
     letter-spacing: 3px;
     padding: 10px;
-    
+
 }
 
 .line {
@@ -47,31 +50,35 @@ body{
 .img {
     border-radius: 50%;
 }
-.imgContainer{
+
+.imgContainer {
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
 }
-.container{
+
+.container {
     width: 55%;
     height: 380px;
     box-shadow: 0px 0px 10px 0.5px rgb(73, 70, 70);
-    padding: 30px;
+    padding: 20px;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
     gap: 15px;
     background-color: white;
 }
-#section1{
-    height: 100vh;
+
+#section1 {
+    height: 82vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
 }
-.name{
+
+.name {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 20px;
     font-weight: 700;
@@ -81,21 +88,24 @@ body{
     margin-bottom: 8px;
 
 }
-.job{
+
+.job {
     font-size: 15px;
     font-weight: 100;
     color: rgb(21, 152, 196);
     text-align: center;
 
 }
-.about{
+
+.about {
     font-size: 15px;
     font-weight: 100;
     color: rgb(42, 54, 58);
     text-align: center;
     overflow: auto;
 }
-#backBtn{
+
+#backBtn {
     color: rgb(21, 152, 196);
     font-size: 20px;
     padding: 4px 10px;
@@ -104,7 +114,8 @@ body{
     border-radius: 10px;
     background-color: white;
 }
-#nextBtn{
+
+#nextBtn {
     color: rgb(21, 152, 196);
     font-size: 20px;
     padding: 4px 10px;
@@ -114,8 +125,28 @@ body{
     background-color: white;
 
 }
-.btn{
+
+.btnHover:hover {
+    box-shadow: 0px 0px 6px 0.4px;
+}
+
+.btn {
     display: flex;
     justify-content: center;
     gap: 10px;
+}
+
+nav {
+    padding: 10px 0px;
+}
+
+@media screen and(max-width:800px) {
+    .headerName {
+        font-size: 25px;
+    }
+
+    .line {
+        width: 100px;
+        height: 8px;
+    }
 }

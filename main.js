@@ -11,76 +11,63 @@ let card = document.querySelector(".card");
 //kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
 const object = [
     {
-        imgUrl: "https://a.storyblok.com/f/191576/1200x800/faa88c639f/round_profil_picture_before_.webp",
-        fullName: "Susan Smith",
+        imgUrl: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXw3NjA4Mjc3NHx8ZW58MHx8fHx8",
+        fullName: "Mister Smith",
         job: "WEB DEVOLOPER",
         about: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur deleniti idconsequatur quisquam rem? Doloremque dolore facere ipsum sapiente, deleniti minima earum nonobcaecati dicta. Eaque, nam deleniti? Perspiciatis illo, nobis incidunt iusto dicta eligendi reiciendis et voluptas quod quia, mollitia, nulla nesciunt. Sit id numquam ipsam nam alias tempore."
     },
 
     {
-        imgUrl: "https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg",
+        imgUrl: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnN8ZW58MHx8MHx8fDA%3D",
         fullName: "John Khan",
         job: "GRAPHIC DESIGNER",
-        about: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur deleniti idconsequatur quisquam rem? Doloremque dolore facere ipsum sapiente, deleniti minima earum nonobcaecati dicta. Eaque, nam deleniti? Perspiciatis illo, nobis incidunt iusto dicta eligendi reiciendis et voluptas quod quia, mollitia, nulla nesciunt. Sit id numquam ipsam nam alias tempore."
+        about: "Lorem ipsum dolor Consectetur quisquam rem? Doloremque dolore facere ipsum sapiente, deleniti minima earum nonobcaecati dicta. Eaque, nam deleniti? Perspiciatis illo, nobis incidunt iusto dicta eligendi reiciendis et voluptas quod quia, mollitia, nulla nesciunt. Sit id numquam ipsam nam alias tempore."
     },
 
     {
-        imgUrl: "https://digitalasset.intuit.com/content/dam/intuit/pcg/en_ca/profile/web/image/photos/grinning-man-with-coffee-image-profile-ca-desktop.jpg",
-        fullName: "Selin Diana",
+        imgUrl: "https://media.creativemornings.com/uploads/user/avatar/49419/Bechtel_Profile_Square.jpg",
+        fullName: "Aykhan Buss",
         job: "WEB DEVOLOPER",
-        about: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur deleniti idconsequatur quisquam rem? Doloremque dolore facere ipsum sapiente, deleniti minima earum nonobcaecati dicta. Eaque, nam deleniti? Perspiciatis illo, nobis incidunt iusto dicta eligendi reiciendis et voluptas quod quia, mollitia, nulla nesciunt. Sit id numquam ipsam nam alias tempore."
+        about: "Dolor sit ametng elit. Consectetur deleniti idconsequatur quisquam rem? Doloremque dolore facere ipsum sapiente, deleniti minima earum nonobcaecati dicta. Eaque, nam deleniti? Perspiciatis illo, nobis incidunt iusto dicta eligendi reiciendis et voluptas quod quia, mollitia, nulla nesciunt. Sit id numquam ipsam nam alias tempore."
+    },
+    {
+        imgUrl: "https://media.licdn.com/dms/image/C4E03AQFNPQN4lAxjtw/profile-displayphoto-shrink_800_800/0/1626457593073?e=2147483647&v=beta&t=7tD-D0oQyS2aZFugmkD6U4CqvlzFmqf95D3luhyJ6po",
+        fullName: "Selin Diana",
+        job: "UX DESIGIN",
+        about: "Consectetur deleniti idconsequatur quisquam rem? Doloremque dolore facere ipsum sapiente, deleniti minima earum nonobcaecati dicta. Eaque, nam deleniti? Perspiciatis illo, nobis incidunt iusto dicta eligendi reiciendis et voluptas quod quia, mollitia, nulla nesciunt. Sit id numquam ipsam nam alias tempore."
     },
 ];
 
 // kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
-let number = 0;
-backBtn.addEventListener("click", function () {
-    if (number <= 0) {
-        number = 0;
-    }
-    else if (number > 0) {
-        number -= 1;
 
-    }
-});
+let count = 0;
+
+// window.addEventListener("DOMContentLoaded", function (e) {
+//     show(count);
+// });
+
+function show(count) {
+    const item = object[count];
+    img.src = item.imgUrl;
+    name.textContent = item.fullName;
+    job.textContent = item.job;
+    about.textContent = item.about;
+};
+
 nextBtn.addEventListener("click", function () {
-    if (number < object.length - 1) {
-        number += 1
-        object[number];
-        show()
-
-
+    count++;
+    if (count > object.length - 1) {
+        count = 0;
     }
-})
-
-
-function show() {
-    for (let i = 0; i < object.length; i++) {
-        return card.innerHTML = `
-        <div class="container">
-        <div class="imgContainer">
-        <div class="circle">
-            <img src="${object[number].imgUrl}" alt="img" class="img" width="193px">
-        </div>
-    </div>
-    <div class="namePart">
-        <div class="name">${object[number].fullName}</div>
-        <div class="job">${object[number].job}</div>
-    </div>
-    <div class="about">${object[number].about}
-    </div>
-    </div>
-    <div class="btn">
-        <button id="backBtn">&#x276E</button>
-        <button id="nextBtn">&#x276F</button>
-    </div>
-    `;
+    show(count);
+});
+backBtn.addEventListener("click", function () {
+    count--;
+    if (count < 0) {
+        count = object.length-1;
     }
-
-}
-
-
-
+    show(count);
+});
 
 
 
